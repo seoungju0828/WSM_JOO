@@ -1,3 +1,18 @@
 body {
     background-color: limegreen;
 }
+
+/* h1의 자매인 모든 h2에 plum 배경색 */
+h1 ~ h2 {
+    /* background-color: plum; */
+}
+
+/* h1의 자매인 첫번째 h2만 plum 배경색 */
+h1 + h2 {
+    background-color: plum;
+}
+
+/* h1과 h2는 plum 배경색 */
+h1, h2 {
+    background-color: plum;
+}
