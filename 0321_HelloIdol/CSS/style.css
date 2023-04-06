@@ -1,11 +1,13 @@
+/* 코드 내용은 WSM 노션의 CSS연습 문제 참조 */
+
 body {
     background-color: limegreen;
 }
 
 /* h1의 자매인 모든 h2에 plum 배경색 */
-h1 ~ h2 {
-    /* background-color: plum; */
-}
+/* h1 ~ h2 {
+    background-color: plum;
+} */
 
 /* h1의 자매인 첫번째 h2만 plum 배경색 */
 h1 + h2 {
@@ -13,6 +15,59 @@ h1 + h2 {
 }
 
 /* h1과 h2는 plum 배경색 */
-h1, h2 {
+h1, 
+h2 {
     background-color: plum;
 }
+
+h5 ~ h6,
+ol,
+ul {
+    color : #333;
+    font-size : 32px;
+}
+
+.korea {
+    color : skyblue;
+}
+
+.china,
+.canada,
+.japan {
+    color : crimson;
+}
+
+.USA {
+    color : blue;
+}
+
+.leader {
+    color : purple;
+}
+
+li:nth-child(5) {
+    text-decoration: underline;
+}
+
+/* 짝수번호에만 배경색을 #eee로 지정한다 (짝수 : even, 홀수 : odd) */
+li:nth-child(even) {
+    background-color : #eee;
+}
+
+/* 5의 배수에 배경색을 #aaa로 지정한다 (배수는 숫자n 이렇게 쓴다 (1n은 줄이 다 쳐진다) */
+li:nth-child(5n) {
+    background-color : #aaa;
+}
+
+[type="text"] {
+    background-color : aqua;
+}
+
+/* 이름이 달라도 태그가 있는대로 순서를 세기때문에 이 문제에서는 div안에 h1다음 ul다음 ul이 있기 때문에 3으로 번호를 선택해야한다 */
+/* hover는 마우스 올렸을 때만 밑줄이 쳐지게 하는 것 */
+ul:nth-child(3) > li:nth-child(2):hover{
+    text-decoration : overline;
+}
+
+/* 코드에서 자신이 원하는 부분의 셀렉터 순서를 알아내는 법 (구글 개발자 도구에서)
+body > div:nth-child(8) > ul:nth-child(3) > li:nth-child(2) */
