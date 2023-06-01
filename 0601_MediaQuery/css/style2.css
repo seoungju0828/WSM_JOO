@@ -1,0 +1,25 @@
+/*mobile ver.*/
+/*너비가 최소 1px 이상일 때 적용, 즉. 1px 보다 클 때 적용*/
+@media screen and (min-width : 1px) {
+    body {
+        background-color: darkblue;
+    }
+}
+
+/*tablet ver.*/
+/*너비가 최소 541px 이상일 때 적용, 즉. 641px 보다 클 때 적용*/
+@media screen and (min-width : 541px) {
+    body {
+        background-color: darkmagenta;
+    }
+}
+
+/*desk top ver.*/
+/*너비가 최소 721px 이상일 때 적용, 즉. 721px 보다 클 때 적용*/
+@media screen and (min-width : 721px) {
+    body {
+        background-color: darkgoldenrod;
+    }
+}
+
+/*min-width를 사용해서 구현할 때는 순서가 반대여야한다 (모바일 -> 태블릿 -> 데스크탑 순서) : 우선순위 때문에r*/

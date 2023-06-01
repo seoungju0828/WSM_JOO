@@ -1,0 +1,20 @@
+/*desk top ver. */
+body {
+    background-color: darkgreen;
+}
+
+/*tablet ver. */
+/*너비가 최대로 720px 일 때까지 적용, 즉. 720px보다 작을 때 적용*/
+@media screen and (max-width : 720px) {
+    body {
+        background-color: darkred;
+    }
+}
+
+/* mobile ver.*/
+/*너비가 최대로 540px 일 때까지 적용, 즉. 540px보다 작을 때 적용*/
+@media screen and (max-width : 540px) {
+    body {
+        background-color: darkblue;
+    }
+}
