@@ -34,8 +34,8 @@ header {
     background-color: var(--first-color);
     position: fixed;                            /* 스크롤해도 항상 위치 고정 */
     top: 0;
-    right: 0;
-    left: 0;
+    right: 0;                                   /*값을 0으로 주면, 오른쪽 끝까지 늘림*/
+    left: 0;                                    /*값을 0으로 주면, 왼쪽 끝까지 늘림*/
 }
 nav {
     height: 44px;
@@ -61,4 +61,63 @@ nav {
 .nav-toggle {
     font-size: var(--h2-font-size);
     visibility: hidden;
+}
+
+/*tablet*/
+@media screen and (max-width: 720px) {
+
+}
+
+/*mobile*/
+@media screen and (max-width: 540px) {
+
+    /*.nav-logo : 가운데로*/
+    .nav-logo {
+        margin: 0 auto;
+    }
+
+    /*.nav-list : 아래로, 안보이게*/
+    .nav-list {
+
+        /*세로로 내리고, 가운데 정렬함*/
+        position: absolute;
+        top: 44px;
+        flex-direction: column;
+        text-align: center;                                     /*align-items로도 바꿀 수 있지만, 그건 자체 아이템의 크기가 줄어들기 때문에, 이걸로 하는게 좋다*/
+
+        /*사이즈를 조정함*/
+        right: 0;
+        left: 0;
+
+        /*배경색을 투명하게 지정하고, 블러를 설정함*/
+        background-color: rgba(239, 177, 28, 0.4);
+        backdrop-filter: blur(4px);
+
+        /*햄버거 메뉴를 눌러야 메뉴바가 나오도록 설정함*/
+        height: 0;                                             /*처음에는 안보이게*/
+    }
+
+    .nav-items {
+        padding: 1em 0;                                        /*item들의 위아래 여백*/
+        border-bottom: 2px solid #fff;
+    }
+
+    .nav-link {
+        display: block;                                        /*link를 양옆으로 넓게*/
+    }
+
+    /*.nav-toggle : 보이게*/
+    .nav-toggle {
+        visibility: visible;
+        position: absolute;                                    /*햄버거 메뉴 공간을 차지하지 않게, .nav-logo를 가운데로*/
+        right: 16px;                                           /*햄버거 메뉴 원위치*/
+    }
+
+    .show-menu {
+        height: 171px;
+    }
+
+    /*.show-menu하면, .nav-list 보이게*/
+    /*.show-menu하면, .nav-toggle의 모양 X자로*/
+
 }
