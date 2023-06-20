@@ -1,0 +1,130 @@
+/* Variables CSS */
+
+/* google font 가져옴 */
+@import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@200;400;700&display=swap");
+
+/* 변수임 */
+:root {
+
+    /* color */
+    --first-color: #008156;
+    --second-color: #efb11c;
+    --body-color: #fff;
+
+    /* font */
+    --body-font: "Hahmlet", serif;
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.8rem;
+    --smaller-font-size: 0.6rem;
+    --font-thin: 200;
+    --font-regular: 400;
+    --font-blod: 700;
+
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: #000;
+}
+header {
+    background-color: var(--first-color);
+    position: fixed;                            /* 스크롤해도 항상 위치 고정 */
+    top: 0;
+    right: 0;                                   /*값을 0으로 주면, 오른쪽 끝까지 늘림*/
+    left: 0;                                    /*값을 0으로 주면, 왼쪽 끝까지 늘림*/
+}
+nav {
+    height: 44px;
+}
+.nav.container {
+    display: flex;                              /* 기본값 : 수평정렬 */
+    justify-content: space-between;
+    align-items: center;                        /* 교차축 가운데 맞춤 */
+    padding: 0 16px;
+    color: #fff;
+}
+.nav.container a {
+    color: #fff;
+}
+.nav-logo {
+    font-size: var(--h2-font-size);
+}
+.nav-list {
+    display: flex;
+    column-gap: 100px;
+    font-weight: var(--font-blod);
+}
+.nav-toggle {
+    font-size: var(--h2-font-size);
+    visibility: hidden;
+}
+
+/*tablet*/
+@media screen and (max-width: 720px) {
+
+}
+
+/*mobile*/
+@media screen and (max-width: 540px) {
+
+    /*.nav-logo : 가운데로*/
+    .nav-logo {
+        margin: 0 auto;
+    }
+
+    /*.nav-list : 아래로, 안보이게*/
+    .nav-list {
+
+        /*세로로 내리고, 가운데 정렬함*/
+        position: absolute;
+        top: 44px;
+        flex-direction: column;
+        text-align: center;                                     /*align-items로도 바꿀 수 있지만, 그건 자체 아이템의 크기가 줄어들기 때문에, 이걸로 하는게 좋다*/
+
+        /*사이즈를 조정함*/
+        right: 0;
+        left: 0;
+
+        /*배경색을 투명하게 지정하고, 블러를 설정함*/
+        background-color: rgba(239, 177, 28, 0.4);
+        backdrop-filter: blur(4px);
+
+        /*햄버거 메뉴를 눌러야 메뉴바가 나오도록 설정함*/
+        height: 0;                                             /*처음에는 안보이게*/
+
+        /*부드럽게 챡 떨어지게 함*/
+        transition: all 0.5s;
+
+        /*내용이 넘치면 안보이게*/
+        overflow: hidden;
+    }
+
+    .nav-items {
+        padding: 1em 0;                                        /*item들의 위아래 여백*/
+        border-bottom: 2px solid #fff;
+    }
+
+    .nav-link {
+        display: block;                                        /*link를 양옆으로 넓게*/
+    }
+
+    /*.nav-toggle : 보이게*/
+    .nav-toggle {
+        visibility: visible;
+        position: absolute;                                    /*햄버거 메뉴 공간을 차지하지 않게, .nav-logo를 가운데로*/
+        right: 16px;                                           /*햄버거 메뉴 원위치*/
+        cursor: pointer;
+    }
+
+    .show-menu {
+        height: 171px;
+    }
+
+    /*.show-menu하면, .nav-list 보이게*/
+    /*.show-menu하면, .nav-toggle의 모양 X자로*/
+
+}
