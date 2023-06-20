@@ -98,6 +98,9 @@ nav {
 
         /*부드럽게 챡 떨어지게 함*/
         transition: all 0.5s;
+
+        /*내용이 넘치면 안보이게*/
+        overflow: hidden;
     }
 
     .nav-items {
@@ -114,6 +117,7 @@ nav {
         visibility: visible;
         position: absolute;                                    /*햄버거 메뉴 공간을 차지하지 않게, .nav-logo를 가운데로*/
         right: 16px;                                           /*햄버거 메뉴 원위치*/
+        cursor: pointer;
     }
 
     .show-menu {
