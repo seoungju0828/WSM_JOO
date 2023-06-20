@@ -80,3 +80,13 @@ let reviews = [
         "thoughts": "좋은 말. 지키기는 어려운",
     },
 ]
+
+// let entertainer = ["정재현", "김도영", "성한빈"];
+// console.log(entertainer[2]);
+
+// let person = {"group" : "zb1", "name" : "성한빈", "country" : "Korea"};
+// console.log(person["name"]);
+// console.log(person.name);
+
+// console.log(books[9].author);
+// console.log(books[3]["author"]);
