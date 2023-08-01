@@ -4,7 +4,7 @@
     gap: 80px;                                          /*column-gap:80px; / row-gap:80px;을 준거랑 같다*/
     flex-wrap: wrap;                                    /*너무 길면 밑으로 내려라*/
     justify-content: center;                            /*메인 축(수평) 가운데로*/
-    max-width: calc(150px * 4 + 80px * 3);              /*한 줄에 최대 2개의 row-container, 4개의 book-item이 보이도록 설정*/
+    max-width: calc(150px * 4 + 80px * 5);              /*한 줄에 최대 2개의 row-container, 4개의 book-item이 보이도록 설정*/
     margin-left: auto;                                  /*좁아진 bookshelf 자체를 가운데로*/
     margin-right: auto;                                 /*좁아진 bookshelf 자체를 가운데로*/
 }
