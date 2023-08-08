@@ -1,0 +1,65 @@
+main{
+    margin-top: calc(44px + 100px); /* 띄어쓰기 꼭 하기 */
+}
+
+.container{
+    display: flex;
+}
+
+.info-groups{
+    border: 2px solid black;
+    flex-wrap: wrap;
+}
+
+.info,
+.review{
+    flex-direction: column;
+}
+
+.reviews{
+    flex-direction: column;
+}
+
+.info-group{
+    flex-direction: column;
+}
+
+.book-image{
+    width: 200px;
+    height: 400px;
+}
+
+.info{
+    width: 300px;
+    height: 150px;
+}
+
+.review{
+    height: 150px;
+}
+
+@media screen and (max-width:540px){ /* 540px 이하의 너비이면 적용 */
+    main{
+        margin-top: calc(44px + 40px); /* 띄어쓰기 꼭 하기 */
+    }
+    .image-info-groups{
+        flex-direction: column;
+    }
+}
+
+/* delete me */
+main div{
+    border : 2px solid violet;
+}
+
+.book-image{
+    background-color:cornflowerblue;
+}
+
+.info{
+    background-color:aqua;
+}
+
+.review{
+    background-color: cadetblue;
+}
