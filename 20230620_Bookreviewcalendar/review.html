@@ -12,36 +12,111 @@
     <link rel="stylesheet" href="css/review.css">
 
 </head>
+
 <body>
-
     <header>
-         <nav class="nav container">                         <!--구분은 띄어쓰기 (시험문제 출제) -->
 
-            <a href="" class="nav-logo">
-                <i class="bi bi-book"></i>
-            </a>
+    <nav class="nav container">
 
-            <ul class="nav-list">
-                <li class="nav-items"><a href="" class="nav-link">책장</a></li>
-                <li class="nav-items"><a href="" class="nav-link">리뷰</a></li>
-                <li class="nav-items"><a href="" class="nav-link">캘린더</a></li>
-            </ul>
+        <a href="" class="nav-logo">
+            <i class="bi bi-book"></i>
+        </a>
 
-            <div class="nav-toggle" id="nav_toggle">
-                <i class="bi bi-list"></i>
-            </div>
+        <ul class="nav-list">
+            <li class="nav-item a"><a href="" class="nav-link">책장</a></li>
+            <li class="nav-item a"><a href="" class="nav-link">리뷰</a></li>
+            <li class="nav-item a"><a href="" class="nav-link">캘린더</a></li>
+        </ul>
+    
+        <div class="nav-toggle" id="nav_toggle">
+            <i class="bi bi-list"></i>
+        </div>
 
-        </nav>
+    </nav>
 
     </header>
 
-    <main id="review">
+  <main id="review">
 
-    </main>
+    <div class="image-info-groups container">
 
-    <script src="JS/nav.js"></script>
-    <script src="JS/data.js"></script>
-    <script src="JS/review.js"></script>
+      <div class="book-image">
+        이미지
+      </div>
 
-</body>
-</html>
+      <div class="info-groups container">
+        <div class="info-group container">
+
+          <div class="info container">
+
+            <div class="title label">
+              제목
+            </div>
+
+            <div class="title">
+              세이노의 가르침 (.title)
+            </div>
+
+          </div>
+
+        <div class="info container">
+                        <div class="author label">
+                          저자
+                        </div>
+
+                        <div class="author">
+                          세이노
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="info-group container">
+                    <div class="info container">
+
+                        <div class="publisher label">
+                            출판사
+                        </div>
+
+                        <div class="publisher">
+                            세이노출판사
+                        </div>
+
+                    </div>
+
+                    <div class="info container">
+
+                        <div class="read-data label">
+                            읽은 날짜
+                        </div>
+
+                        <div class="read-data">
+                  2023.08.03
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reviews container">
+          <div class="review container">
+            <div class="synopsis label">
+              줄거리
+            </div>
+            <div class="synopsis">
+              세이노가 귀요미다
+            </div>
+          </div>
+          <div class="review container">
+            <div class="phrase label">
+              마음에 드는 구절
+            </div>
+            <div class="phrase">
+              "나는 기요미 세이노"
+            </div>
+          </div>
+        </div>
+      </main>
+
+    <script src="js/nav.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/review.js"></script>
