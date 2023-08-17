@@ -39,15 +39,31 @@ console.log(title, author, publisher, bookImage);
 
 // -> HTML에 넣자
 const titleDiv = document.getElementsByClassName("title")[1];
+titleDiv.innerHTML = title;
+
 const authorDiv = document.getElementsByClassName("author")[1];
+authorDiv.innerHTML = author;
+
 const publisherDiv = document.getElementsByClassName("publisher")[1];
+publisherDiv.innerHTML = publisher;
+
 const bookImageDiv = document.getElementsByClassName("book-image")[0];
+bookImageDiv.innerHTML = `<img src="${bookImage}"/>`; 
 //다 1인 이유 : 전체에서 세는게 아니라 각각 박스에서 숫자를 세는 것임 : title 박스에서 1번째에 넣는거다
 
-titleDiv.innerHTML = title;
-authorDiv.innerHTML = author;
-publisherDiv.innerHTML = publisher;
-bookImageDiv.innerHTML = `<img src="${bookImage}"/>`; 
+const readDateDiv = document.getElementsByClassName("read-date")[1];
+let now = "2030년 2월 14일"
+now = new Date();                               //()안에 아무것도 안쓰면, 현재 시각과 날짜, 요일이 출력됨
+
+let year = now.getFullYear();
+let month = now.getMonth();
+let date = now.getDate();
+
+const daylist = ["월", "화", "수", "목", "금", "토", "일"];
+let day = now.getDay();
+
+now = `${year}년 ${month + 1}월 ${date}일 ${daylist[day-1]}요일`;
+readDateDiv.innerHTML = now;
 
 // const bookId = "1";
 // var url_href = window.location.href;
