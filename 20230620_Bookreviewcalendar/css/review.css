@@ -1,5 +1,7 @@
 main{
-    margin-top: calc(44px + 100px); /* 띄어쓰기 꼭 하기 */
+    margin: 0 auto;                                         /*0 : top, bottom | auto : right, left*/
+    margin-top: calc(44px + 100px);                         /* 띄어쓰기 꼭 하기 */
+    width: calc(100% - 100px * 2);
 }
 
 .container{
@@ -7,8 +9,14 @@ main{
 }
 
 .info-groups{
-    border: 2px solid black;
     flex-wrap: wrap;
+    min-width: 200px;                                       /*...을 위해*/
+    margin: 0 40px;
+    gap: 40px;
+}
+
+.label {
+    color: #777;
 }
 
 .info,
@@ -18,37 +26,78 @@ main{
 
 .reviews{
     flex-direction: column;
+    margin: 40px 0;
 }
 
 .info-group{
     flex-direction: column;
+    overflow: hidden;
+    gap: 40px;
+}
+
+.title,
+.author,
+.publisher,
+.read-date,
+.synopsis,
+.phrase {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.25rem;
 }
 
 .book-image{
     width: 200px;
-    height: 400px;
 }
 
-.info{
-    width: 300px;
-    height: 150px;
+.book-image > img {
+    width: 200px;                                          /*처음 이미지 넓이*/
+    min-width: 200px;                                      /*너비를 줄여도, 더이상 작아지지 않게*/
+    box-shadow: 0 16px 32px #aaa;                        /*책 효과*/
+    border-radius: 8px;                                    /*책 효과*/
+    transition: all 0.4s;                                  /*책 애니메이션*/
+}
+
+.book-image > img:hover {
+    transform: perspective(400px) rotateY(20deg);          /*책 애니메이션*/
 }
 
 .review{
-    height: 150px;
+    height: 100px;
 }
 
-@media screen and (max-width:540px){ /* 540px 이하의 너비이면 적용 */
+.synopsis input,
+.phrase input {
+    width: 100%;
+    font-size: 1.25rem;
+}
+
+@media screen and (max-width:540px){                       /* 540px 이하의 너비이면 적용 */
+
     main{
-        margin-top: calc(44px + 40px); /* 띄어쓰기 꼭 하기 */
+        margin-top: calc(44px + 40px);                     /* 띄어쓰기 꼭 하기 */
     }
+
     .image-info-groups{
         flex-direction: column;
     }
+
+    .book-image {
+        margin: 0 auto;
+    }                                                      /*책 센터배열*/
+
+    .info-groups {
+        margin: 40px 0 0;
+    }
+
+    /* .reviews {
+        margin-top: 40px;
+    } */
 }
 
 /* delete me */
-main div{
+/* main div{
     border : 2px solid violet;
 }
 
@@ -62,4 +111,4 @@ main div{
 
 .review{
     background-color: cadetblue;
-}
+} */
