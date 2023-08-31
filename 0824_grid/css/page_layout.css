@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container * {
+    border: 2px solid black;
+}
+
+figure > img {
+    width: 200px;
+    height: 100px;
+    object-fit: cover;                                  /*cover : 비율을 딱 맞추고 그 비율에 맞게 위아래가 짤리는 거*/
+}                                                       /*contain : 비율을 맞추고 그 안에 짤리지 않게 사진을 넣는다 (공백 발생)*/
+
+html {
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 200px 3fr 1fr;
+    grid-template-rows: 44px 1fr 80px;
+    grid-template-areas:
+    "header header header"
+    "side1 main side2"
+    "footer footers footers";                    /*이 위치만 여기서 조정해주면 따로 변경하지 않아도 구조가 변경된다*/
+}
+
+.header {
+    background-color: lightcoral;
+    grid-area: header;
+}
+
+.side1 {
+    background-color: lightpink;
+    grid-area: side1;
+}
+
+.main {
+    background-color: lightsalmon;
+    grid-area: main;
+}
+
+.side2 {
+    background-color: lightpink;
+    grid-area: side2;
+}
+
+.footer {
+    background-color: ivory;
+    grid-area: footers;
+}                                               /*위에 grid-template-area에서 정해준 이름과 클래스의 이름이 같을 필요는 없다*/
