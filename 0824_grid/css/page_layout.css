@@ -26,7 +26,7 @@ html {
     grid-template-areas:
     "header header header"
     "side1 main side2"
-    "footer footers footers";                    /*이 위치만 여기서 조정해주면 따로 변경하지 않아도 구조가 변경된다*/
+    "footer footers footers";                           /*이 위치만 여기서 조정해주면 따로 변경하지 않아도 구조가 변경된다*/
 }
 
 .header {
