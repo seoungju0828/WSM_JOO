@@ -29,6 +29,9 @@ const setCalendar = (year, month) => {
     //해당 월의 마지막 날짜가 며칠 : 다음달의 1일 하루 전날 - 이게바로 0일
     var lastDate = new Date(year, month - 1 + 1, 0).getDate();
 
+    //원래 있던 달력의 .date.item clear
+    datesContainerDiv.replaceChildren();
+
     //.date.item{$}*lastDate
     //for 1~lastDate
     //<div class="date item">date</div>
@@ -53,10 +56,50 @@ const setCalendar = (year, month) => {
 setCalendar(year, month);
 
 //< : 저번달
-const BackMonth = document.getElementsByClassName(month)[0];
-BackMonth.onclick = () => {
 
+//HTML -> js
+const leftDiv = document.getElementsByClassName("left")[0];
+
+//첫번째 방법
+// leftDiv.addEventListener("click", () => console.log(`${month-1}월`));
+
+//두번째 방법 - 시험문제
+leftDiv.onclick = () => {
+    month--;
+
+    //수동 계산
+    if (month == 0) {
+        year--;
+        month = 12;
+    }
+
+    //자동 계산
+    // let thisMonthDateObject = new Date(year, month-1);
+    // year = thisMonthDateObject.getFullYear();
+    // month = thisMonthDateObject.getMonth() + 1;
+
+    setCalendar(year, month);
 }
 
 //> : 다음달
+
+//HTML -> js
+const rightDiv = document.getElementsByClassName("right")[0];
+
+rightDiv.onclick = () => {
+    month++;
+
+    //수동 계산
+    if (month == 13) {
+        year++;
+        month = 1;
+    }
+
+    //자동 계산
+    // let thisMonthDateObject = new Date(year, month-1);
+    // year = thisMonthDateObject.getFullYear();
+    // month = thisMonthDateObject.getMonth() + 1;
+    
+    setCalendar(year, month);
+}
 
